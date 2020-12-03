@@ -1,0 +1,931 @@
+{
+  "polUni": {
+    "attributes": {
+      "annotation": "", 
+      "dn": "uni", 
+      "nameAlias": "", 
+      "userdom": "all"
+    }, 
+    "children": [
+      {
+        "fvTenant": {
+          "attributes": {
+            "annotation": "", 
+            "descr": "", 
+            "dn": "uni/tn-mspoke01tn", 
+            "name": "mspoke01tn", 
+            "nameAlias": "", 
+            "ownerKey": "", 
+            "ownerTag": "", 
+            "userdom": ":all:"
+          }, 
+          "children": [
+            {
+              "vnsSvcCont": {
+                "attributes": {
+                  "annotation": "", 
+                  "dn": "", 
+                  "userdom": "all"
+                }
+              }
+            }, 
+            {
+              "vzFilter": {
+                "attributes": {
+                  "annotation": "", 
+                  "descr": "", 
+                  "dn": "", 
+                  "name": "ssh", 
+                  "nameAlias": "", 
+                  "ownerKey": "", 
+                  "ownerTag": "", 
+                  "userdom": ":all:"
+                }, 
+                "children": [
+                  {
+                    "vzEntry": {
+                      "attributes": {
+                        "annotation": "", 
+                        "applyToFrag": "no", 
+                        "arpOpc": "unspecified", 
+                        "dFromPort": "ssh", 
+                        "dToPort": "ssh", 
+                        "descr": "", 
+                        "dn": "", 
+                        "etherT": "ip", 
+                        "icmpv4T": "unspecified", 
+                        "icmpv6T": "unspecified", 
+                        "matchDscp": "unspecified", 
+                        "name": "ssh", 
+                        "nameAlias": "", 
+                        "prot": "tcp", 
+                        "sFromPort": "unspecified", 
+                        "sToPort": "unspecified", 
+                        "stateful": "no", 
+                        "tcpRules": "", 
+                        "userdom": ":all:"
+                      }
+                    }
+                  }
+                ]
+              }
+            }, 
+            {
+              "fvRsTenantMonPol": {
+                "attributes": {
+                  "annotation": "", 
+                  "dn": "", 
+                  "tnMonEPGPolName": "", 
+                  "userdom": "all"
+                }
+              }
+            }, 
+            {
+              "cloudAccount": {
+                "attributes": {
+                  "accessType": "managed", 
+                  "annotation": "", 
+                  "dn": "", 
+                  "id": "491c03db-7b39-4697-b14c-3a544803c5b4", 
+                  "name": "", 
+                  "nameAlias": "", 
+                  "userdom": ":all:", 
+                  "vendor": "azure"
+                }
+              }
+            }, 
+            {
+              "cloudCtxProfile": {
+                "attributes": {
+                  "annotation": "", 
+                  "azResourceGroup": "mspoke01-rg", 
+                  "azVirtualNetwork": "mspoke01", 
+                  "descr": "", 
+                  "dn": "", 
+                  "interSitePeeringEnabled": "no", 
+                  "name": "mspoke01ctxprof", 
+                  "nameAlias": "", 
+                  "ownerKey": "", 
+                  "ownerTag": "", 
+                  "type": "regular", 
+                  "userdom": ":all:"
+                }, 
+                "children": [
+                  {
+                    "cloudRsToCtx": {
+                      "attributes": {
+                        "annotation": "", 
+                        "dn": "", 
+                        "tnFvCtxName": "mspoke01vrf", 
+                        "userdom": "all"
+                      }
+                    }
+                  }, 
+                  {
+                    "cloudRsCtxProfileToStatsPol": {
+                      "attributes": {
+                        "annotation": "", 
+                        "dn": "", 
+                        "tDn": "uni/tn-mspoke01tn/azstatpol-default", 
+                        "userdom": "all"
+                      }
+                    }
+                  }, 
+                  {
+                    "cloudRsCtxProfileToRegion": {
+                      "attributes": {
+                        "annotation": "", 
+                        "dn": "", 
+                        "tDn": "uni/clouddomp/provp-azure/region-eastus2", 
+                        "userdom": ":all:"
+                      }
+                    }
+                  }, 
+                  {
+                    "cloudRsCtxProfileToGatewayRouterP": {
+                      "attributes": {
+                        "annotation": "", 
+                        "dn": "", 
+                        "tDn": "uni/tn-infra/gwrouterp-default", 
+                        "type": "spoke", 
+                        "userdom": ":all:"
+                      }
+                    }
+                  }, 
+                  {
+                    "cloudCidr": {
+                      "attributes": {
+                        "addr": "10.100.0.0/16", 
+                        "annotation": "", 
+                        "createdBy": "USER", 
+                        "descr": "", 
+                        "dn": "", 
+                        "name": "", 
+                        "nameAlias": "", 
+                        "ownerKey": "", 
+                        "ownerTag": "", 
+                        "primary": "yes", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "cloudSubnet": {
+                            "attributes": {
+                              "annotation": "", 
+                              "azSubnet": "", 
+                              "azSubnetNetworkSecurityGroup": "", 
+                              "descr": "", 
+                              "dn": "", 
+                              "hostIfPDn": "", 
+                              "ip": "10.100.0.0/24", 
+                              "name": "subnet-10.100.0.0_24", 
+                              "nameAlias": "", 
+                              "scope": "private", 
+                              "usage": "user", 
+                              "userdom": ":all:", 
+                              "zone": ""
+                            }, 
+                            "children": [
+                              {
+                                "cloudRsZoneAttach": {
+                                  "attributes": {
+                                    "annotation": "", 
+                                    "dn": "", 
+                                    "tDn": "uni/clouddomp/provp-azure/region-eastus2/zone-default", 
+                                    "userdom": ":all:"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }, 
+            {
+              "cloudApp": {
+                "attributes": {
+                  "annotation": "", 
+                  "descr": "", 
+                  "dn": "", 
+                  "name": "mspoke01anp", 
+                  "nameAlias": "", 
+                  "ownerKey": "", 
+                  "ownerTag": "", 
+                  "userdom": ":all:"
+                }, 
+                "children": [
+                  {
+                    "cloudEPg": {
+                      "attributes": {
+                        "annotation": "", 
+                        "azApplicationSecurityGroup": "", 
+                        "azNetworkSecurityGroup": "", 
+                        "descr": "", 
+                        "dn": "", 
+                        "exceptionTag": "", 
+                        "floodOnEncap": "disabled", 
+                        "matchT": "AtleastOne", 
+                        "name": "mspoke01epg", 
+                        "nameAlias": "", 
+                        "prefGrMemb": "exclude", 
+                        "prio": "unspecified", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "fvRsProv": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "intent": "install", 
+                              "matchT": "AtleastOne", 
+                              "prio": "unspecified", 
+                              "tnVzBrCPName": "mremote01-mspoke01", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "fvRsProv": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "intent": "install", 
+                              "matchT": "AtleastOne", 
+                              "prio": "unspecified", 
+                              "tnVzBrCPName": "mspoke02-mspoke01", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "fvRsProv": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "intent": "install", 
+                              "matchT": "AtleastOne", 
+                              "prio": "unspecified", 
+                              "tnVzBrCPName": "internet-mspoke01", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "fvRsCustQosPol": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "tnQosCustomPolName": "", 
+                              "userdom": "all"
+                            }
+                          }
+                        }, 
+                        {
+                          "cloudRsCloudEPgCtx": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "tnFvCtxName": "mspoke01vrf", 
+                              "userdom": "all"
+                            }
+                          }
+                        }, 
+                        {
+                          "cloudEPSelector": {
+                            "attributes": {
+                              "annotation": "", 
+                              "descr": "", 
+                              "dn": "", 
+                              "matchExpression": "IP=='10.100.0.0/24'", 
+                              "name": "mspoke01-epsel", 
+                              "nameAlias": "", 
+                              "ownerKey": "", 
+                              "ownerTag": "", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }, 
+            {
+              "vzBrCP": {
+                "attributes": {
+                  "annotation": "", 
+                  "azNetworkSecurityGroupRule": "", 
+                  "descr": "", 
+                  "dn": "", 
+                  "intent": "install", 
+                  "name": "internet-mspoke01", 
+                  "nameAlias": "", 
+                  "ownerKey": "", 
+                  "ownerTag": "", 
+                  "prio": "unspecified", 
+                  "scope": "global", 
+                  "targetDscp": "unspecified", 
+                  "userdom": ":all:"
+                }, 
+                "children": [
+                  {
+                    "vzSubj": {
+                      "attributes": {
+                        "annotation": "", 
+                        "consMatchT": "AtleastOne", 
+                        "descr": "", 
+                        "dn": "", 
+                        "name": "default", 
+                        "nameAlias": "", 
+                        "prio": "unspecified", 
+                        "provMatchT": "AtleastOne", 
+                        "revFltPorts": "yes", 
+                        "targetDscp": "unspecified", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "vzRsSubjFiltAtt": {
+                            "attributes": {
+                              "action": "permit", 
+                              "annotation": "", 
+                              "directives": "", 
+                              "dn": "", 
+                              "priorityOverride": "default", 
+                              "tnVzFilterName": "ssh", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }, 
+            {
+              "vzBrCP": {
+                "attributes": {
+                  "annotation": "", 
+                  "azNetworkSecurityGroupRule": "", 
+                  "descr": "", 
+                  "dn": "", 
+                  "intent": "install", 
+                  "name": "mspoke02-mspoke01", 
+                  "nameAlias": "", 
+                  "ownerKey": "", 
+                  "ownerTag": "", 
+                  "prio": "unspecified", 
+                  "scope": "global", 
+                  "targetDscp": "unspecified", 
+                  "userdom": ":all:"
+                }, 
+                "children": [
+                  {
+                    "vzSubj": {
+                      "attributes": {
+                        "annotation": "", 
+                        "consMatchT": "AtleastOne", 
+                        "descr": "", 
+                        "dn": "", 
+                        "name": "default", 
+                        "nameAlias": "", 
+                        "prio": "unspecified", 
+                        "provMatchT": "AtleastOne", 
+                        "revFltPorts": "yes", 
+                        "targetDscp": "unspecified", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "vzRsSubjGraphAtt": {
+                            "attributes": {
+                              "annotation": "", 
+                              "directives": "", 
+                              "dn": "", 
+                              "tnVnsAbsGraphName": "eastus2fwSG", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "vzRsSubjFiltAtt": {
+                            "attributes": {
+                              "action": "permit", 
+                              "annotation": "", 
+                              "directives": "", 
+                              "dn": "", 
+                              "priorityOverride": "default", 
+                              "tnVzFilterName": "default", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }, 
+            {
+              "vzBrCP": {
+                "attributes": {
+                  "annotation": "", 
+                  "azNetworkSecurityGroupRule": "", 
+                  "descr": "", 
+                  "dn": "", 
+                  "intent": "install", 
+                  "name": "mremote01-mspoke01", 
+                  "nameAlias": "", 
+                  "ownerKey": "", 
+                  "ownerTag": "", 
+                  "prio": "unspecified", 
+                  "scope": "global", 
+                  "targetDscp": "unspecified", 
+                  "userdom": ":all:"
+                }, 
+                "children": [
+                  {
+                    "vzSubj": {
+                      "attributes": {
+                        "annotation": "", 
+                        "consMatchT": "AtleastOne", 
+                        "descr": "", 
+                        "dn": "", 
+                        "name": "default", 
+                        "nameAlias": "", 
+                        "prio": "unspecified", 
+                        "provMatchT": "AtleastOne", 
+                        "revFltPorts": "yes", 
+                        "targetDscp": "unspecified", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "vzRsSubjGraphAtt": {
+                            "attributes": {
+                              "annotation": "", 
+                              "directives": "", 
+                              "dn": "", 
+                              "tnVnsAbsGraphName": "eastus2fwSG", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "vzRsSubjFiltAtt": {
+                            "attributes": {
+                              "action": "permit", 
+                              "annotation": "", 
+                              "directives": "", 
+                              "dn": "", 
+                              "priorityOverride": "default", 
+                              "tnVzFilterName": "default", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }, 
+            {
+              "fvCtx": {
+                "attributes": {
+                  "annotation": "", 
+                  "bdEnforcedEnable": "no", 
+                  "descr": "", 
+                  "dn": "", 
+                  "ipDataPlaneLearning": "enabled", 
+                  "knwMcastAct": "permit", 
+                  "name": "mspoke01vrf", 
+                  "nameAlias": "", 
+                  "ownerKey": "", 
+                  "ownerTag": "", 
+                  "pcEnfDir": "ingress", 
+                  "pcEnfPref": "enforced", 
+                  "userdom": ":all:", 
+                  "vrfIndex": "8"
+                }, 
+                "children": [
+                  {
+                    "fvRsVrfValidationPol": {
+                      "attributes": {
+                        "annotation": "", 
+                        "dn": "", 
+                        "tnL3extVrfValidationPolName": "", 
+                        "userdom": "all"
+                      }
+                    }
+                  }, 
+                  {
+                    "vzAny": {
+                      "attributes": {
+                        "annotation": "", 
+                        "descr": "", 
+                        "dn": "", 
+                        "matchT": "AtleastOne", 
+                        "name": "", 
+                        "nameAlias": "", 
+                        "prefGrMemb": "disabled", 
+                        "userdom": "all"
+                      }
+                    }
+                  }, 
+                  {
+                    "fvRsOspfCtxPol": {
+                      "attributes": {
+                        "annotation": "", 
+                        "dn": "", 
+                        "tnOspfCtxPolName": "", 
+                        "userdom": "all"
+                      }
+                    }
+                  }, 
+                  {
+                    "fvRsCtxToEpRet": {
+                      "attributes": {
+                        "annotation": "", 
+                        "dn": "", 
+                        "tnFvEpRetPolName": "", 
+                        "userdom": "all"
+                      }
+                    }
+                  }, 
+                  {
+                    "fvRsCtxToExtRouteTagPol": {
+                      "attributes": {
+                        "annotation": "", 
+                        "dn": "", 
+                        "tnL3extRouteTagPolName": "", 
+                        "userdom": "all"
+                      }
+                    }
+                  }, 
+                  {
+                    "fvRsBgpCtxPol": {
+                      "attributes": {
+                        "annotation": "", 
+                        "dn": "", 
+                        "tnBgpCtxPolName": "", 
+                        "userdom": "all"
+                      }
+                    }
+                  }
+                ]
+              }
+            }, 
+            {
+              "cloudAzureStatsPol": {
+                "attributes": {
+                  "annotation": "", 
+                  "descr": "", 
+                  "dn": "", 
+                  "enableStats": "yes", 
+                  "name": "default", 
+                  "nameAlias": "", 
+                  "ownerKey": "", 
+                  "ownerTag": "", 
+                  "userdom": "all"
+                }
+              }
+            }, 
+            {
+              "fvRsCloudAccount": {
+                "attributes": {
+                  "annotation": "", 
+                  "dn": "", 
+                  "tDn": "uni/tn-mspoke01tn/act-[491c03db-7b39-4697-b14c-3a544803c5b4]-vendor-azure", 
+                  "userdom": ":all:"
+                }
+              }
+            }, 
+            {
+              "vnsAbsGraph": {
+                "attributes": {
+                  "annotation": "", 
+                  "descr": "", 
+                  "dn": "", 
+                  "filterBetweenNodes": "allow-all", 
+                  "name": "eastus2fwSG", 
+                  "nameAlias": "", 
+                  "ownerKey": "", 
+                  "ownerTag": "", 
+                  "svcRuleType": "vrf", 
+                  "type": "cloud", 
+                  "uiTemplateType": "UNSPECIFIED", 
+                  "userdom": ":all:"
+                }, 
+                "children": [
+                  {
+                    "vnsAbsTermNodeProv": {
+                      "attributes": {
+                        "annotation": "", 
+                        "descr": "", 
+                        "dn": "", 
+                        "name": "T2", 
+                        "nameAlias": "", 
+                        "ownerKey": "", 
+                        "ownerTag": "", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "vnsOutTerm": {
+                            "attributes": {
+                              "annotation": "", 
+                              "descr": "", 
+                              "dn": "", 
+                              "name": "", 
+                              "nameAlias": "", 
+                              "userdom": "all"
+                            }
+                          }
+                        }, 
+                        {
+                          "vnsInTerm": {
+                            "attributes": {
+                              "annotation": "", 
+                              "descr": "", 
+                              "dn": "", 
+                              "name": "", 
+                              "nameAlias": "", 
+                              "userdom": "all"
+                            }
+                          }
+                        }, 
+                        {
+                          "vnsAbsTermConn": {
+                            "attributes": {
+                              "annotation": "", 
+                              "attNotify": "no", 
+                              "descr": "", 
+                              "deviceLIfName": "", 
+                              "dn": "", 
+                              "name": "ProvTermConn", 
+                              "nameAlias": "", 
+                              "ownerKey": "", 
+                              "ownerTag": "", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }, 
+                  {
+                    "vnsAbsTermNodeCon": {
+                      "attributes": {
+                        "annotation": "", 
+                        "descr": "", 
+                        "dn": "", 
+                        "name": "T1", 
+                        "nameAlias": "", 
+                        "ownerKey": "", 
+                        "ownerTag": "", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "vnsOutTerm": {
+                            "attributes": {
+                              "annotation": "", 
+                              "descr": "", 
+                              "dn": "", 
+                              "name": "", 
+                              "nameAlias": "", 
+                              "userdom": "all"
+                            }
+                          }
+                        }, 
+                        {
+                          "vnsInTerm": {
+                            "attributes": {
+                              "annotation": "", 
+                              "descr": "", 
+                              "dn": "", 
+                              "name": "", 
+                              "nameAlias": "", 
+                              "userdom": "all"
+                            }
+                          }
+                        }, 
+                        {
+                          "vnsAbsTermConn": {
+                            "attributes": {
+                              "annotation": "", 
+                              "attNotify": "no", 
+                              "descr": "", 
+                              "deviceLIfName": "", 
+                              "dn": "", 
+                              "name": "ConsTermConn", 
+                              "nameAlias": "", 
+                              "ownerKey": "", 
+                              "ownerTag": "", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }, 
+                  {
+                    "vnsAbsNode": {
+                      "attributes": {
+                        "annotation": "", 
+                        "descr": "", 
+                        "dn": "", 
+                        "funcTemplateType": "FW_ROUTED", 
+                        "funcType": "GoTo", 
+                        "isCopy": "no", 
+                        "managed": "no", 
+                        "name": "N0", 
+                        "nameAlias": "", 
+                        "ownerKey": "", 
+                        "ownerTag": "", 
+                        "routingMode": "unspecified", 
+                        "sequenceNumber": "0", 
+                        "shareEncap": "no", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "vnsRsNodeToCloudLDev": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "tDn": "uni/tn-infra/cld-eastus2fw", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "vnsAbsFuncConn": {
+                            "attributes": {
+                              "annotation": "", 
+                              "attNotify": "no", 
+                              "connType": "redir", 
+                              "descr": "", 
+                              "deviceLIfName": "eastus2fw-tru", 
+                              "dn": "", 
+                              "name": "provider", 
+                              "nameAlias": "", 
+                              "ownerKey": "", 
+                              "ownerTag": "", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "vnsAbsFuncConn": {
+                            "attributes": {
+                              "annotation": "", 
+                              "attNotify": "no", 
+                              "connType": "redir", 
+                              "descr": "", 
+                              "deviceLIfName": "eastus2fw-un", 
+                              "dn": "", 
+                              "name": "consumer", 
+                              "nameAlias": "", 
+                              "ownerKey": "", 
+                              "ownerTag": "", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "cloudSvcPolicy": {
+                            "attributes": {
+                              "annotation": "", 
+                              "contractName": "mspoke02-mspoke01", 
+                              "descr": "", 
+                              "dn": "", 
+                              "name": "", 
+                              "nameAlias": "", 
+                              "ownerKey": "", 
+                              "ownerTag": "", 
+                              "subjectName": "default", 
+                              "tenantName": "mspoke01tn", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "cloudSvcPolicy": {
+                            "attributes": {
+                              "annotation": "", 
+                              "contractName": "mremote01-mspoke01", 
+                              "descr": "", 
+                              "dn": "", 
+                              "name": "", 
+                              "nameAlias": "", 
+                              "ownerKey": "", 
+                              "ownerTag": "", 
+                              "subjectName": "default", 
+                              "tenantName": "mspoke01tn", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }, 
+                  {
+                    "vnsAbsConnection": {
+                      "attributes": {
+                        "adjType": "L3", 
+                        "annotation": "", 
+                        "connDir": "provider", 
+                        "connType": "external", 
+                        "descr": "", 
+                        "directConnect": "no", 
+                        "dn": "", 
+                        "name": "CON0", 
+                        "nameAlias": "", 
+                        "ownerKey": "", 
+                        "ownerTag": "", 
+                        "unicastRoute": "yes", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "vnsRsAbsConnectionConns": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "tDn": "uni/tn-mspoke01tn/AbsGraph-eastus2fwSG/AbsTermNodeCon-T1/AbsTConn", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "vnsRsAbsConnectionConns": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "tDn": "uni/tn-mspoke01tn/AbsGraph-eastus2fwSG/AbsNode-N0/AbsFConn-consumer", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }, 
+                  {
+                    "vnsAbsConnection": {
+                      "attributes": {
+                        "adjType": "L3", 
+                        "annotation": "", 
+                        "connDir": "provider", 
+                        "connType": "external", 
+                        "descr": "", 
+                        "directConnect": "no", 
+                        "dn": "", 
+                        "name": "CON1", 
+                        "nameAlias": "", 
+                        "ownerKey": "", 
+                        "ownerTag": "", 
+                        "unicastRoute": "yes", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "vnsRsAbsConnectionConns": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "tDn": "uni/tn-mspoke01tn/AbsGraph-eastus2fwSG/AbsTermNodeProv-T2/AbsTConn", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "vnsRsAbsConnectionConns": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "tDn": "uni/tn-mspoke01tn/AbsGraph-eastus2fwSG/AbsNode-N0/AbsFConn-provider", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
