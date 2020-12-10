@@ -127,7 +127,7 @@
                         "annotation": "", 
                         "dn": "", 
                         "tDn": "uni/tn-mspoke01tn/azstatpol-default", 
-                        "userdom": "all"
+                        "userdom": ":all:"
                       }
                     }
                   }, 
@@ -219,6 +219,89 @@
                 }, 
                 "children": [
                   {
+                    "cloudExtEPg": {
+                      "attributes": {
+                        "annotation": "", 
+                        "descr": "", 
+                        "dn": "", 
+                        "exceptionTag": "", 
+                        "floodOnEncap": "disabled", 
+                        "matchT": "AtleastOne", 
+                        "name": "internet-mspoke01", 
+                        "nameAlias": "", 
+                        "prefGrMemb": "exclude", 
+                        "prio": "unspecified", 
+                        "routeReachability": "internet", 
+                        "userdom": ":all:"
+                      }, 
+                      "children": [
+                        {
+                          "fvRsProv": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "intent": "install", 
+                              "matchT": "AtleastOne", 
+                              "prio": "unspecified", 
+                              "tnVzBrCPName": "internet-mspoke01", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "fvRsCustQosPol": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "tnQosCustomPolName": "", 
+                              "userdom": "all"
+                            }
+                          }
+                        }, 
+                        {
+                          "fvRsCons": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "intent": "install", 
+                              "prio": "unspecified", 
+                              "tnVzBrCPName": "internet-mspoke01", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "cloudRsCloudEPgCtx": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "tnFvCtxName": "mspoke01vrf", 
+                              "userdom": "all"
+                            }
+                          }
+                        }, 
+                        {
+                          "cloudExtEPSelector": {
+                            "attributes": {
+                              "annotation": "", 
+                              "descr": "", 
+                              "dn": "", 
+                              "isShared": "yes", 
+                              "matchExpression": "", 
+                              "name": "internet-mspoke01-epsel", 
+                              "nameAlias": "", 
+                              "ownerKey": "", 
+                              "ownerTag": "", 
+                              "sourceSite": "on-prem", 
+                              "subnet": "0.0.0.0/0", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }, 
+                  {
                     "cloudEPg": {
                       "attributes": {
                         "annotation": "", 
@@ -257,19 +340,6 @@
                               "intent": "install", 
                               "matchT": "AtleastOne", 
                               "prio": "unspecified", 
-                              "tnVzBrCPName": "mspoke02-mspoke01", 
-                              "userdom": ":all:"
-                            }
-                          }
-                        }, 
-                        {
-                          "fvRsProv": {
-                            "attributes": {
-                              "annotation": "", 
-                              "dn": "", 
-                              "intent": "install", 
-                              "matchT": "AtleastOne", 
-                              "prio": "unspecified", 
                               "tnVzBrCPName": "internet-mspoke01", 
                               "userdom": ":all:"
                             }
@@ -282,6 +352,42 @@
                               "dn": "", 
                               "tnQosCustomPolName": "", 
                               "userdom": "all"
+                            }
+                          }
+                        }, 
+                        {
+                          "fvRsCons": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "intent": "install", 
+                              "prio": "unspecified", 
+                              "tnVzBrCPName": "mhub01-mspoke01", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "fvRsCons": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "intent": "install", 
+                              "prio": "unspecified", 
+                              "tnVzBrCPName": "mspoke02-mspoke01", 
+                              "userdom": ":all:"
+                            }
+                          }
+                        }, 
+                        {
+                          "fvRsCons": {
+                            "attributes": {
+                              "annotation": "", 
+                              "dn": "", 
+                              "intent": "install", 
+                              "prio": "unspecified", 
+                              "tnVzBrCPName": "internet-mspoke01", 
+                              "userdom": ":all:"
                             }
                           }
                         }, 
@@ -359,70 +465,6 @@
                               "dn": "", 
                               "priorityOverride": "default", 
                               "tnVzFilterName": "ssh", 
-                              "userdom": ":all:"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
-            }, 
-            {
-              "vzBrCP": {
-                "attributes": {
-                  "annotation": "", 
-                  "azNetworkSecurityGroupRule": "", 
-                  "descr": "", 
-                  "dn": "", 
-                  "intent": "install", 
-                  "name": "mspoke02-mspoke01", 
-                  "nameAlias": "", 
-                  "ownerKey": "", 
-                  "ownerTag": "", 
-                  "prio": "unspecified", 
-                  "scope": "global", 
-                  "targetDscp": "unspecified", 
-                  "userdom": ":all:"
-                }, 
-                "children": [
-                  {
-                    "vzSubj": {
-                      "attributes": {
-                        "annotation": "", 
-                        "consMatchT": "AtleastOne", 
-                        "descr": "", 
-                        "dn": "", 
-                        "name": "default", 
-                        "nameAlias": "", 
-                        "prio": "unspecified", 
-                        "provMatchT": "AtleastOne", 
-                        "revFltPorts": "yes", 
-                        "targetDscp": "unspecified", 
-                        "userdom": ":all:"
-                      }, 
-                      "children": [
-                        {
-                          "vzRsSubjGraphAtt": {
-                            "attributes": {
-                              "annotation": "", 
-                              "directives": "", 
-                              "dn": "", 
-                              "tnVnsAbsGraphName": "eastus2fwSG", 
-                              "userdom": ":all:"
-                            }
-                          }
-                        }, 
-                        {
-                          "vzRsSubjFiltAtt": {
-                            "attributes": {
-                              "action": "permit", 
-                              "annotation": "", 
-                              "directives": "", 
-                              "dn": "", 
-                              "priorityOverride": "default", 
-                              "tnVzFilterName": "default", 
                               "userdom": ":all:"
                             }
                           }
@@ -594,7 +636,7 @@
                   "nameAlias": "", 
                   "ownerKey": "", 
                   "ownerTag": "", 
-                  "userdom": "all"
+                  "userdom": ":all:"
                 }
               }
             }, 
@@ -646,7 +688,7 @@
                               "dn": "", 
                               "name": "", 
                               "nameAlias": "", 
-                              "userdom": "all"
+                              "userdom": ":all:"
                             }
                           }
                         }, 
@@ -658,7 +700,7 @@
                               "dn": "", 
                               "name": "", 
                               "nameAlias": "", 
-                              "userdom": "all"
+                              "userdom": ":all:"
                             }
                           }
                         }, 
@@ -702,7 +744,7 @@
                               "dn": "", 
                               "name": "", 
                               "nameAlias": "", 
-                              "userdom": "all"
+                              "userdom": ":all:"
                             }
                           }
                         }, 
@@ -714,7 +756,7 @@
                               "dn": "", 
                               "name": "", 
                               "nameAlias": "", 
-                              "userdom": "all"
+                              "userdom": ":all:"
                             }
                           }
                         }, 
@@ -774,9 +816,9 @@
                               "attNotify": "no", 
                               "connType": "redir", 
                               "descr": "", 
-                              "deviceLIfName": "eastus2fw-tru", 
+                              "deviceLIfName": "eastus2fw-un", 
                               "dn": "", 
-                              "name": "provider", 
+                              "name": "consumer", 
                               "nameAlias": "", 
                               "ownerKey": "", 
                               "ownerTag": "", 
@@ -791,29 +833,12 @@
                               "attNotify": "no", 
                               "connType": "redir", 
                               "descr": "", 
-                              "deviceLIfName": "eastus2fw-un", 
+                              "deviceLIfName": "eastus2fw-tru", 
                               "dn": "", 
-                              "name": "consumer", 
+                              "name": "provider", 
                               "nameAlias": "", 
                               "ownerKey": "", 
                               "ownerTag": "", 
-                              "userdom": ":all:"
-                            }
-                          }
-                        }, 
-                        {
-                          "cloudSvcPolicy": {
-                            "attributes": {
-                              "annotation": "", 
-                              "contractName": "mspoke02-mspoke01", 
-                              "descr": "", 
-                              "dn": "", 
-                              "name": "", 
-                              "nameAlias": "", 
-                              "ownerKey": "", 
-                              "ownerTag": "", 
-                              "subjectName": "default", 
-                              "tenantName": "mspoke01tn", 
                               "userdom": ":all:"
                             }
                           }
